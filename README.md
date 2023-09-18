@@ -1,4 +1,6 @@
 # React Components
+-TRABAJO ACTUAL-
+REACT NATIVE BASE
 
 Este es el proyecto base de la aplicacion movil ToDo List
 
