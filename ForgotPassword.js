@@ -39,6 +39,7 @@ function ForgotPassword() {
         source={require('./xbox.jpeg')}
         style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
       />
+      <Text style={styles.title}>Recuperación de contraseña</Text>
       <View style={styles.formGroup}>
         <Text style={styles.label}>Email:</Text>
         <TextInput
@@ -75,6 +76,10 @@ const styles = StyleSheet.create({
     textAlign: 'center', // Centrar el texto
     marginBottom: 5, // Espacio después del texto
     fontSize: 16,
+  },
+  title: {
+    fontSize: 20,
+    margin: 20,
   },
   input: {
     borderWidth: 1,

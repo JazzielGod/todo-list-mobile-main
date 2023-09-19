@@ -40,14 +40,11 @@ function SignUp() {
     validateName();
     validateEmail();
     validatePassword();
-
-    //Validación antes de proceder
-    if (nameError || emailError || passwordError) {
-      return;
+  
+    // Validación antes de proceder
+    if (!nameError && !emailError && !passwordError) {
+      alert('Registro exitoso');
     }
-
-    // manejar el envío del registro
-    alert('Registro exitoso');
   };
 
   return (
@@ -56,6 +53,7 @@ function SignUp() {
         source={require('./xbox.jpeg')}
         style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
       />
+      <Text style={{margin: 20, fontSize: 20}}>Registro</Text>
       <View style={styles.formGroup}>
         <Text style={styles.label}>Nombre:</Text>
         <TextInput

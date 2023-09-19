@@ -54,6 +54,7 @@ function ResetPassword() {
         source={require('./xbox.jpeg')}
         style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
       />
+      <Text style={{margin: 20, fontSize: 20}}>Cambio de contraseña</Text>
       <View style={styles.formGroup}>
         <Text style={styles.label}>Password:</Text>
         <TextInput

@@ -11,7 +11,7 @@ export default function App() {
     <NativeBaseProvider>
       <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
         <Container>
-          <Login />
+          <SignUp/>
         </Container>
       </Box>
     </NativeBaseProvider>
