@@ -10,7 +10,9 @@ function ResetPassword() {
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
 
   const validatePassword = () => {
-    if (password.length < 8) {
+    if (!password) {
+      setPasswordError('Este campo es obligatorio.');
+    } else if (password.length < 8) {
       setPasswordError('La contraseña debe tener al menos 8 caracteres.');
     } else {
       setPasswordError('');
@@ -18,7 +20,9 @@ function ResetPassword() {
   };
 
   const validateNewPassword = () => {
-    if (newPassword.length < 8) {
+    if (!newPassword) {
+      setNewPasswordError('Este campo es obligatorio.');
+    } else if (newPassword.length < 8) {
       setNewPasswordError('La nueva contraseña debe tener al menos 8 caracteres.');
     } else {
       setNewPasswordError('');
@@ -26,7 +30,9 @@ function ResetPassword() {
   };
 
   const validateConfirmPassword = () => {
-    if (confirmPassword !== newPassword) {
+    if (!confirmPassword) {
+      setConfirmPasswordError('Este campo es obligatorio.');
+    } else if (confirmPassword !== newPassword) {
       setConfirmPasswordError('Las contraseñas no coinciden.');
     } else {
       setConfirmPasswordError('');
@@ -34,6 +40,12 @@ function ResetPassword() {
   };
 
   const handleResetPassword = () => {
+     // Verificar si los campos están vacíos
+    if (!password || !newPassword || !confirmPassword) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
+
     // Validar los campos antes de continuar
     validatePassword();
     validateNewPassword();
@@ -44,7 +56,7 @@ function ResetPassword() {
       return;
     }
 
-    //envío de restablecimiento de contraseña
+    // Envío de restablecimiento de contraseña
     alert('Restablecimiento de contraseña exitoso');
   };
 
@@ -54,7 +66,7 @@ function ResetPassword() {
         source={require('./xbox.jpeg')}
         style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
       />
-      <Text style={{margin: 20, fontSize: 20}}>Cambio de contraseña</Text>
+      <Text style={{ margin: 20, fontSize: 20 }}>Cambio de contraseña</Text>
       <View style={styles.formGroup}>
         <Text style={styles.label}>Password:</Text>
         <TextInput
@@ -109,8 +121,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   label: {
-    textAlign: 'center', // Centrar el texto
-    marginBottom: 5, // Espacio después del texto
+    textAlign: 'center',
+    marginBottom: 5,
     fontSize: 16,
   },
   input: {
@@ -122,7 +134,7 @@ const styles = StyleSheet.create({
   },
   error: {
     color: 'red',
-    textAlign: 'center', // Centrar el texto
+    textAlign: 'center',
     fontSize: 16,
   },
   formButtons: {
