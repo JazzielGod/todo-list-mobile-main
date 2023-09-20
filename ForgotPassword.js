@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 4,
-    padding: 10,
+    padding: 15,
     fontSize: 16,
   },
   error: {
