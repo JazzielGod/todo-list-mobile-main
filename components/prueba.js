@@ -1,5 +1,5 @@
 //quiero una funcion que calcule el precio total de los productos de un carrito. En Ingles
-
+//PRUEBA DE LA IA PARECIDA  GITHUB COPILOT (Codeium)
 function calculateTotalPrice(cart) {
   let totalPrice = 0;
 
